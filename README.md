@@ -16,10 +16,6 @@ I recommend doing some of the sample apps (e.g. Blinky) before diving into this 
 git clone https://github.com/bgiori/blegpio.git
 ```
 
-### Download the Android Application
-If you have an Android device (phone or tablet) which has BLE functionality, download our Mynewt BLE GPIO Client from the Google Play Store. 
-If you don't have access to an Android device but have a Mac running OSX, you can download LightBlue to use as your BLE client.
-
 ### Build and Run the Application
 First make sure your board is plugged into your computer through a MicroUSB cable. Now build the and load the boot loader onto our nRF52dk.
 ```
@@ -45,6 +41,11 @@ In order to notice the GPIO changes let's wire an LED into the board from Pin 22
 ![LED Diagram](/images/gpiocontroller.png?raw=true "Sample Wired LED")
 
 Sample LED circuit. Pins 22 and 23 wired to the positive side of LED through a resistor.
+
+### Download the Android Application
+If you have an Android device (phone or tablet) which has BLE functionality, download our Mynewt BLE GPIO Client from the Google Play Store. 
+
+If you don't have access to an Android device but have a Mac running OSX, you can download LightBlue to use as your BLE client.
 
 ### Connect to the Board
 If your app runs fine, its time to connect your Android to the board using Bluetooth LE. Start the app and chose the ble-gpio device name from the list of devices. Now you should see the GPIO control panel.
