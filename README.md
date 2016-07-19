@@ -7,7 +7,7 @@
 This project uses an Android device to control the digital GPIO of nRF52dk over Bluetooth Low Energy. If you don't have an Android device, there are computer applications such as LightBlue which can mimic our Android app. 
 
 ### Setup
-First, make sure you have newt installed on your computer. Here is the link to the [Mynewt quick start guide](http://mynewt.apache.org/quick-start/) and the [Blinky project](http://mynewt.apache.org/develop/os/tutorials/nRF52/) for the nRF52dk.
+First, make sure you have newt installed on your computer. Here is the link to the [newt quick start guide](http://mynewt.apache.org/quick-start/) and the [Blinky project](http://mynewt.apache.org/develop/os/tutorials/nRF52/) for the nRF52dk.
 
 I recommend doing some of the sample apps (e.g. Blinky) before diving into this project to familiarize yourself with newt tools and the core Mynewt OS.
 
