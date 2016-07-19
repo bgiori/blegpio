@@ -1,59 +1,76 @@
-<!--
-#
-# Licensed to the Apache Software Foundation (ASF) under one
-# or more contributor license agreements.  See the NOTICE file
-# distributed with this work for additional information
-# regarding copyright ownership.  The ASF licenses this file
-# to you under the Apache License, Version 2.0 (the
-# "License"); you may not use this file except in compliance
-# with the License.  You may obtain a copy of the License at
-#
-# http://www.apache.org/licenses/LICENSE-2.0
-#
-# Unless required by applicable law or agreed to in writing,
-# software distributed under the License is distributed on an
-# "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
-#  KIND, either express or implied.  See the License for the
-# specific language governing permissions and limitations
-# under the License.
-#
--->
+# Mynewt BLE GPIO Control 
 
-# Apache Blinky
+### Overview
 
-## Overview
+This project uses an Android device to control the digital GPIO of nRF52dk over Bluetooth Low Energy. If you don't have an Android device, there are computer applications such as LightBlue which can mimic our Android app. 
 
-Apache Blinky is a skeleton for new Apache Mynewt projects.  The user downloads
-this skeleton by issuing the "newt new" command (using Apache Newt).  Apache
-blinky also contains an example app and target for use with Apache Mynewt to
-help you get started.
+### Setup
+First, make sure you have newt installed on your computer. Here is the link to the [Mynewt quick start guide](http://mynewt.apache.org/quick-start/) and the [Blinky project](http://mynewt.apache.org/develop/os/tutorials/nRF52/) for the nRF52dk.
 
-## Building
+I recommend doing some of the sample apps (e.g. Blinky) before diving into this project to familiarize yourself with newt tools and the core Mynewt OS.
 
-Apache Blinky contains an example Apache Mynewt application called blinky.
-When executed on suitably equipped hardware, this application repeatedly blinks
-an LED.  The below procedure describes how to build this application for the
-Apache Mynewt simulator.
-
-1. Download and install Apache Newt.
-
-You will need to download the Apache Newt tool, as documented in the [Getting Started Guide](http://mynewt.apache.org/os/get_started/introduction/).
-
-2. Download the Apache Mynewt Core package (executed from the blinky directory).
-
-```no-highlight
-    $ newt install
+### Clone This Project
+```
+git clone https://github.com/bgiori/blegpio.git
 ```
 
-3. Build the blinky app for the sim platform using the "my_blinky_sim" target
-(executed from the blinky directory).
+### Download the Android Application
+If you have an Android device (phone or tablet) which has BLE functionality, download our Mynewt BLE GPIO Client from the Google Play Store. 
+If you don't have access to an Android device but have a Mac running OSX, you can download LightBlue to use as your BLE client.
 
-```no-highlight
-    $ newt build my_blinky_sim
+### Build and Run the Application
+First make sure your board is plugged into your computer through a MicroUSB cable. Now build the and load the boot loader onto our nRF52dk.
 ```
+$ newt build nrf52dk_boot 
+$ newt load nrf5dk_boot
+```
+Next, run the blegpio app.
+```
+newt run blegpio 0.0.0
+```
+After the app builds and loads onto our device, you should see GDB start and prompt you. Whenever you initially run our app, you should always reset the board first by running the monitor reset command. After the board has been reset, we run the app using continue.
+```
+(gdb) monitor reset
+Resetting target
+(gdb) continue
+Continuing.
+```
+**Note**: If you're having trouble connecting to the board or controlling the GPIO, your best bet is to quit gdb and reset the board.
 
-The Apache Newt tool should indicate the location of the generated blinky
-executable.  Since the simulator does not have an LED to blink, this version of
-blinky is not terribly exciting!.  To learn how to build blinky for actual
-hardware, please see the [Getting Started
-Guide](http://mynewt.apache.org/os/get_started/introduction/).
+### Wire Your LED
+In order to notice the GPIO changes let's wire an LED into the board from Pin 22 and Pin 23. Use the Image below as a guide if you are new to using bread boards.
+
+![LED Diagram](/images/gpiocontroller.png?raw=true "Sample Wired LED")
+
+Sample LED circuit. Pins 22 and 23 wired to the positive side of LED through a resistor.
+
+### Connect to the Board
+If your app runs fine, its time to connect your Android to the board using Bluetooth LE. Start the app and chose the ble-gpio device name from the list of devices. Now you should see the GPIO control panel.
+
+![Device Control Screen](/images/device-2016-07-19-112718.png?raw=true "Device Control Screen")
+
+### Initialize GPIO Pins
+A digital GPIO pin (labeled by number on the board) can be either an input or an output and must be initialized as such. Currently, the nRF52dk board support package does not support reinitializing GPIO so once a pin has been set it cannot be reinitialized (unless you reset the board).
+
+To initialize a GPIO pin, press the Initialize New GPIO button and enter the desired attributes into the dialog.
+
+![Init New GPIO](/images/device-2016-07-19-113410.png?raw=true "Initialize New GPIO Dialog")
+
+The switch next to the direction selector serves a dual purpose based on whether you choose Input or Output:
+
+Input
+* ON: Pull-up input
+* OFF: Pull-down input
+
+Output
+* ON: Initial value HIGH
+* OFF: Initial value LOW
+
+Let's initialize Pin 22, as an Output pin with a HIGH initial value. Press Initialize and you should see your LED turn on! Next initialize Pin 23 to a pull-down input and you should see the pin show up in the list with a HIGH value. 
+
+You can toggle an output value using the switch on the right side of its list item. If you toggle Pin 22 you should also see the value of Pin 23 change after a short delay.
+
+### Resources
+The code for Android application can be found on github: https://github.com/bgiori/mynewt-ble-gpio-client-android
+
+If you'd like to learn more about newt, Mynewt OS, or the nimBLE stack, take a look at the [Mynewt documentation](http://mynewt.apache.org/develop/os/introduction/).
