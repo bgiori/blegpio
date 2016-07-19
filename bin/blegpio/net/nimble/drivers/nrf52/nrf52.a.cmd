@@ -1,1 +1,0 @@
-arm-none-eabi-ar rcs /Users/briangiori/dev/newt/blegpio/bin/blegpio/net/nimble/drivers/nrf52/nrf52.a /Users/briangiori/dev/newt/blegpio/bin/blegpio/net/nimble/drivers/nrf52/ble_hw.o /Users/briangiori/dev/newt/blegpio/bin/blegpio/net/nimble/drivers/nrf52/ble_phy.o

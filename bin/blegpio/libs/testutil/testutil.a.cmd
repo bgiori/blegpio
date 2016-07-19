@@ -1,1 +1,0 @@
-arm-none-eabi-ar rcs /Users/briangiori/dev/newt/blegpio/bin/blegpio/libs/testutil/testutil.a /Users/briangiori/dev/newt/blegpio/bin/blegpio/libs/testutil/case.o /Users/briangiori/dev/newt/blegpio/bin/blegpio/libs/testutil/suite.o /Users/briangiori/dev/newt/blegpio/bin/blegpio/libs/testutil/testutil.o /Users/briangiori/dev/newt/blegpio/bin/blegpio/libs/testutil/testutil_arch_arm.o
