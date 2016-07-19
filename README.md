@@ -1,5 +1,7 @@
 # Mynewt BLE GPIO Control 
 
+![Sample image](/images/FullSizeRender.jpg?raw=true "Android application and Mynewt application working together")
+
 ### Overview
 
 This project uses an Android device to control the digital GPIO of nRF52dk over Bluetooth Low Energy. If you don't have an Android device, there are computer applications such as LightBlue which can mimic our Android app. 
