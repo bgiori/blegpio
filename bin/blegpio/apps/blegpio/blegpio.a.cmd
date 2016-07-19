@@ -1,0 +1,1 @@
+arm-none-eabi-ar rcs /Users/briangiori/dev/newt/blegpio/bin/blegpio/apps/blegpio/blegpio.a /Users/briangiori/dev/newt/blegpio/bin/blegpio/apps/blegpio/gatt_svr.o /Users/briangiori/dev/newt/blegpio/bin/blegpio/apps/blegpio/main.o /Users/briangiori/dev/newt/blegpio/bin/blegpio/apps/blegpio/misc.o /Users/briangiori/dev/newt/blegpio/bin/blegpio/apps/blegpio/store.o

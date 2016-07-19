@@ -1,0 +1,1 @@
+arm-none-eabi-ar rcs /Users/briangiori/dev/newt/blegpio/bin/blegpio/libs/cmsis-core/cmsis-core.a /Users/briangiori/dev/newt/blegpio/bin/blegpio/libs/cmsis-core/cmsis_nvic.o

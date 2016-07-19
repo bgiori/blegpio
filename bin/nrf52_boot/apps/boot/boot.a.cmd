@@ -1,0 +1,1 @@
+arm-none-eabi-ar rcs /Users/briangiori/dev/newt/blegpio/bin/nrf52_boot/apps/boot/boot.a /Users/briangiori/dev/newt/blegpio/bin/nrf52_boot/apps/boot/boot.o

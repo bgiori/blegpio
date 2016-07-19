@@ -1,0 +1,4 @@
+### Target: targets/blegpio
+target.app: "apps/blegpio"
+target.bsp: "@apache-mynewt-core/hw/bsp/nrf52dk"
+target.build_profile: "optimized"

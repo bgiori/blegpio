@@ -1,0 +1,1 @@
+arm-none-eabi-ar rcs /Users/briangiori/dev/newt/blegpio/bin/blegpio/net/nimble/host/services/mandatory/mandatory.a /Users/briangiori/dev/newt/blegpio/bin/blegpio/net/nimble/host/services/mandatory/ble_svc_gap.o /Users/briangiori/dev/newt/blegpio/bin/blegpio/net/nimble/host/services/mandatory/ble_svc_gatt.o

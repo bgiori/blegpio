@@ -1,0 +1,79 @@
+{
+  "build_time": "2016-07-19T14:06:28-07:00",
+  "build_version": "0.0.0.0",
+  "id": "65543305e6f94f8c476ae003a6b0891c5437d7e3e9fea91bedb7b62152dc1bf1",
+  "image": "blegpio.img",
+  "pkgs": [
+    {
+      "name": "libs/console/full"
+    },
+    {
+      "name": "hw/hal"
+    },
+    {
+      "name": "compiler/arm-none-eabi-m4"
+    },
+    {
+      "name": "libs/os"
+    },
+    {
+      "name": "net/nimble/controller"
+    },
+    {
+      "name": "net/nimble/host/services/mandatory"
+    },
+    {
+      "name": "net/nimble/host/store/ram"
+    },
+    {
+      "name": "libs/cmsis-core"
+    },
+    {
+      "name": "net/nimble/host"
+    },
+    {
+      "name": "libs/util"
+    },
+    {
+      "name": "net/nimble"
+    },
+    {
+      "name": "net/nimble/drivers/nrf52"
+    },
+    {
+      "name": "apps/blegpio"
+    },
+    {
+      "name": "hw/bsp/nrf52dk"
+    },
+    {
+      "name": "targets/blegpio"
+    },
+    {
+      "name": "libs/tinycrypt"
+    },
+    {
+      "name": "sys/stats"
+    },
+    {
+      "name": "libs/mbedtls"
+    },
+    {
+      "name": "sys/log"
+    },
+    {
+      "name": "libs/baselibc"
+    },
+    {
+      "name": "hw/mcu/nordic/nrf52xxx"
+    },
+    {
+      "name": "libs/testutil"
+    }
+  ],
+  "target": [
+    "target.app=apps/blegpio",
+    "target.bsp=@apache-mynewt-core/hw/bsp/nrf52dk",
+    "target.build_profile=optimized"
+  ]
+}

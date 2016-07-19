@@ -1,0 +1,1 @@
+arm-none-eabi-ar rcs /Users/briangiori/dev/newt/blegpio/bin/blegpio/net/nimble/host/store/ram/ram.a /Users/briangiori/dev/newt/blegpio/bin/blegpio/net/nimble/host/store/ram/ble_store_ram.o

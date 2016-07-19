@@ -1,0 +1,1 @@
+arm-none-eabi-ar rcs /Users/briangiori/dev/newt/blegpio/bin/blegpio/net/nimble/nimble.a /Users/briangiori/dev/newt/blegpio/bin/blegpio/net/nimble/hci_common.o /Users/briangiori/dev/newt/blegpio/bin/blegpio/net/nimble/util.o
