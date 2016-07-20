@@ -17,7 +17,9 @@ git clone https://github.com/bgiori/blegpio.git
 ```
 
 ### Install Mynewt Core Respository
+Change directory to the blegpio project root and install the Mynewt core repository as defined in project.yml
 ```
+$ cd blegpio
 $ newt insatll
 ```
 
