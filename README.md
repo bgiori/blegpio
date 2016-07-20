@@ -16,6 +16,11 @@ I recommend doing some of the sample apps (e.g. Blinky) before diving into this 
 git clone https://github.com/bgiori/blegpio.git
 ```
 
+### Install Mynewt Core Respository
+```
+$ newt insatll
+```
+
 ### Build and Run the Application
 First make sure your board is plugged into your computer through a MicroUSB cable. Now build the and load the boot loader onto our nRF52dk.
 ```
